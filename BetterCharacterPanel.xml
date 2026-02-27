@@ -1,0 +1,1307 @@
+<?xml-stylesheet type="text/xsl" href="/css/wowui.xsl"?>
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+
+    <!-- =======================
+         =   Character Panel   =
+         ======================= -->
+    <Frame name="BCP" parent="PaperDollFrame" setAllPoints="true">
+        <Layers>
+            <Layer level="OVERLAY">
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Head_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterHeadSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Head_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="-7" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterHeadSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Head_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterHeadSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Head_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterHeadSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Neck_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterNeckSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Neck_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterNeckSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Neck_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterNeckSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Neck_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterNeckSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="BCP_Shoulder_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterShoulderSlot"
+                            relativePoint="RIGHT">
+                            <Offset>
+                                <AbsDimension x="4" y="7" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="BCP_Shoulder_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterShoulderSlot"
+                            relativePoint="RIGHT">
+                            <Offset>
+                                <AbsDimension x="4" y="-7" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Shoulder_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterShoulderSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Shoulder_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterShoulderSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Back_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterBackSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Back_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterBackSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Back_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterBackSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Back_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterBackSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Chest_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterChestSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Chest_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterChestSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Chest_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterChestSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Chest_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterChestSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: WristsIconPermEnchantOffsets -->
+                <FontString name="BCP_Wrist_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterWristSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: WristsIconTempEnchantOffsets -->
+                <FontString name="BCP_Wrist_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="CharacterWristSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Wrist_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterWristSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Wrist_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterWristSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Hands_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterHandsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Hands_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterHandsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Hands_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterHandsSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Hands_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterHandsSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Waist_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterWaistSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Waist_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterWaistSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Waist_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterWaistSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Waist_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterWaistSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Legs_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterLegsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Legs_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterLegsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Legs_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterLegsSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Legs_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterLegsSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Feet_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterFeetSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Feet_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterFeetSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Feet_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterFeetSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Feet_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterFeetSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Finger1_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterFinger0Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Finger1_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterFinger0Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Finger1_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterFinger0Slot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Finger1_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterFinger0Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Finger2_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterFinger1Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Finger2_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="CharacterFinger1Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Finger2_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterFinger1Slot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Finger2_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterFinger1Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="BCP_Trinket1_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterTrinket0Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="BCP_Trinket2_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterTrinket1Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_FRAME_VALUES: MainHandIconPermEnchantOffsets -->
+                <FontString name="BCP_MainHand_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="13" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="CharacterMainHandSlot"
+                            relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_FRAME_VALUES: MainHandIconTempEnchantOffsets -->
+                <FontString name="BCP_MainHand_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="CharacterMainHandSlot"
+                            relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_MainHand_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterMainHandSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_MainHand_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterMainHandSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_FRAME_VALUES: OffHandIconPermEnchantOffsets -->
+                <FontString name="BCP_SecondaryHand_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterSecondaryHandSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_FRAME_VALUES: OffHandIconTempEnchantOffsets -->
+                <FontString name="BCP_SecondaryHand_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativeTo="CharacterSecondaryHandSlot"
+                            relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_SecondaryHand_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterSecondaryHandSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_SecondaryHand_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterSecondaryHandSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_FRAME_VALUES: RangedIconPermEnchantOffsets -->
+                <FontString name="BCP_Ranged_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="CharacterRangedSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_FRAME_VALUES: RangedIconTempEnchantOffsets -->
+                <FontString name="BCP_Ranged_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="CharacterRangedSlot"
+                            relativePoint="BOTTOMRIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Ranged_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="CharacterRangedSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Ranged_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="CharacterRangedSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+            </Layer>
+        </Layers>
+    </Frame>
+
+
+    <!-- =====================
+         =   Inspect Panel   =
+         ===================== -->
+    <Frame name="BCP_Inspect" parent="InspectPaperDollFrame" setAllPoints="true">
+        <Layers>
+            <Layer level="OVERLAY">
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Head_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectHeadSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Head_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="-7" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectHeadSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Head_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectHeadSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Head_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectHeadSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Neck_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectNeckSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Neck_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectNeckSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Neck_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectNeckSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Neck_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectNeckSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Shoulder_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectShoulderSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Shoulder_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectShoulderSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Shoulder_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectShoulderSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Shoulder_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectShoulderSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Back_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectBackSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Back_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectBackSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Back_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectBackSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Back_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectBackSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Chest_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectChestSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Chest_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectChestSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Chest_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectChestSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Chest_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectChestSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: WristsIconPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Wrist_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectWristSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: WristsIconTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Wrist_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="InspectWristSlot" relativePoint="RIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsMissingEnchantTexture /
+                LeftIconsMissingEnchantSize / LeftIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Wrist_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectWristSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Wrist_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectWristSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Hands_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectHandsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Hands_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectHandsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Hands_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectHandsSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Hands_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectHandsSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Waist_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectWaistSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Waist_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectWaistSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Waist_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectWaistSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Waist_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectWaistSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Legs_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectLegsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Legs_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectLegsSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Legs_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectLegsSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Legs_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectLegsSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Feet_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectFeetSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Feet_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectFeetSlot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Feet_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectFeetSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Feet_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectFeetSlot" relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Finger1_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectFinger0Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Finger1_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectFinger0Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Finger1_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectFinger0Slot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Finger1_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectFinger0Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Finger2_Perm"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectFinger1Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Finger2_Temp"
+                    inherits="GameFontHighlightSmall" justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativeTo="InspectFinger1Slot" relativePoint="LEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Finger2_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectFinger1Slot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Finger2_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectFinger1Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="BCP_Inspect_Trinket1_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectTrinket0Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="BCP_Inspect_Trinket2_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectTrinket1Slot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_FRAME_VALUES: MainHandIconPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_MainHand_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="13" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="InspectMainHandSlot"
+                            relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_FRAME_VALUES: MainHandIconTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_MainHand_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="InspectMainHandSlot"
+                            relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_MainHand_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectMainHandSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_MainHand_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectMainHandSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_FRAME_VALUES: OffHandIconPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_SecondaryHand_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectSecondaryHandSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_FRAME_VALUES: OffHandIconTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_SecondaryHand_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativeTo="InspectSecondaryHandSlot"
+                            relativePoint="BOTTOMLEFT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_SecondaryHand_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectSecondaryHandSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_SecondaryHand_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectSecondaryHandSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+
+                <!-- BCP_FRAME_VALUES: RangedIconPermEnchantOffsets -->
+                <FontString name="BCP_Inspect_Ranged_Perm"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPRIGHT" relativeTo="InspectRangedSlot"
+                            relativePoint="TOPRIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_FRAME_VALUES: RangedIconTempEnchantOffsets -->
+                <FontString name="BCP_Inspect_Ranged_Temp"
+                    inherits="GameFontHighlightSmall">
+                    <Size>
+                        <AbsDimension x="128" y="12" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="InspectRangedSlot"
+                            relativePoint="BOTTOMRIGHT" />
+                    </Anchors>
+                </FontString>
+                <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsMissingEnchantTexture /
+                RightIconsMissingEnchantSize / RightIconsMissingEnchantOffsets -->
+                <Texture name="BCP_Inspect_Ranged_MissingEnchant"
+                    file="Interface\Buttons\WHITE8x8" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="InspectRangedSlot"
+                            relativePoint="TOPLEFT" />
+                    </Anchors>
+                </Texture>
+                <FontString name="BCP_Inspect_Ranged_IL"
+                    inherits="NumberFontNormal" justifyH="CENTER">
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativeTo="InspectRangedSlot"
+                            relativePoint="BOTTOM">
+                            <Offset>
+                                <AbsDimension x="0" y="2" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+    </Frame>
+</Ui>

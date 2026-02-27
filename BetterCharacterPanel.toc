@@ -1,0 +1,37 @@
+## Interface: 11200
+## Title: Better Character Panel
+## Version: 1.0
+## SavedVariables: BCPUnitsIlvlCache
+## SavedVariablesPerCharacter: BCPConfig
+## Author: Walter Bennet
+## Notes: Improves the default character and inspect panel!
+## URL: https://github.com/Arthur-Helias/BetterCharacterPanel
+
+# Localization
+locale\BetterCharacterPanel-enUS.lua
+locale\BetterCharacterPanel-deDE.lua
+locale\BetterCharacterPanel-esES.lua
+locale\BetterCharacterPanel-frFR.lua
+locale\BetterCharacterPanel-ptBR.lua
+locale\BetterCharacterPanel-ruRU.lua
+locale\BetterCharacterPanel-zhCN.lua
+
+# Main
+BetterCharacterPanel-dbenchants.lua
+BetterCharacterPanel-lib.lua
+BetterCharacterPanel-config.lua
+
+# Gear Score Integration Skins
+skins\ilvl\BetterCharacterPanel-ilvl-pfUI.lua
+skins\ilvl\BetterCharacterPanel-ilvl-Vanilla.lua
+
+BetterCharacterPanel-ilvl.lua
+
+# Paperdoll Skins
+skins\paperdoll\BetterCharacterPanel-paperdoll-Vanilla.lua
+skins\paperdoll\BetterCharacterPanel-paperdoll-pfUI.lua
+
+BetterCharacterPanel-paperdoll.lua
+BetterCharacterPanel-notifications.lua
+BetterCharacterPanel.lua
+BetterCharacterPanel.xml

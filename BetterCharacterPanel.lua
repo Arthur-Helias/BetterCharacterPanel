@@ -1,0 +1,50 @@
+BCP_VERSION_MAJOR = "1"
+BCP_VERSION_MINOR = "0"
+BCP_VERSION_PATCH = "0"
+
+BCP_IS_USING_PFUI = false
+BCP_IS_USING_PFUI_TURTLE = false -- Not used yet, could be useful for potential incompatibilities in the future.
+BCP_IS_USING_BCS = false
+
+SLASH_BCP1 = "/bcp"
+SLASH_BCP2 = "/bettercharacterpanel"
+SlashCmdList["BCP"] = function()
+    if BCP_OpenConfig then
+        BCP_OpenConfig()
+    end
+end
+
+local BCP_InitFrame = CreateFrame("Frame")
+BCP_InitFrame:RegisterEvent("PLAYER_LOGIN")
+BCP_InitFrame:RegisterEvent("VARIABLES_LOADED")
+BCP_InitFrame:SetScript("OnEvent", function()
+    BCP_InitFrame:UnregisterEvent("PLAYER_LOGIN")
+
+    -- UI detection
+    if pfUI and pfUI.bag and pfUI.bag.UpdateSlot then
+        BCP_IS_USING_PFUI = true
+
+        if pfUI.skin and pfUI.skin["Character Frame Turtle"] then
+            BCP_IS_USING_PFUI_TURTLE = true
+        end
+    end
+
+    if BCS then
+        BCP_IS_USING_BCS = true
+    end
+
+    -- Alert the user about missing Nampower
+    if not GetNampowerVersion and BCPNotifications then
+        BCPNotifications:CreateNampowerError()
+        return
+    end
+
+    -- Initialize SavedVariables
+    if event == "VARIABLES_LOADED" then
+        if not BCPUnitsIlvlCache then
+            BCPUnitsIlvlCache = {}
+        end
+
+        BCP_InitFrame:UnregisterEvent("VARIABLES_LOADED")
+    end
+end)
