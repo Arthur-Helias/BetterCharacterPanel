@@ -14,6 +14,20 @@ An addon that improves the character panel and the inspect panel by displaying p
 - A configuration GUI, accessible through its associated minimap button or through the command `/bcp`, to enable, disable, and tweak every feature you can think of!
 
 ## Screenshots
+<img width="500" height="455" alt="character-pfui" src="https://github.com/user-attachments/assets/a1db793d-2935-42b4-a7f1-56a1536cc426" /><br>
+*The character panel with pfUI.*<br><br><br>
+<img width="500" height="439" alt="character-vanilla" src="https://github.com/user-attachments/assets/75664f17-4373-4d5f-a5bd-70b8600a4b55" /><br>
+*The character panel with the default UI.*<br><br><br>
+<img width="378" height="500" alt="inspect-pfui" src="https://github.com/user-attachments/assets/5c341b9b-d40a-4240-9ad4-0ea4c78a9d89" /><br>
+*The inspect panel with pfUI.*<br><br><br>
+<img width="376" height="500" alt="inspect-vanilla" src="https://github.com/user-attachments/assets/3d6a1d63-ac04-4640-b8a0-f214b2e093a1" /><br>
+*The inspect panel with the default UI.*<br><br><br>
+<img width="500" height="454" alt="bags-pfui" src="https://github.com/user-attachments/assets/38e95d3c-8023-4ae4-b87a-c9fbb925c3f6" /><br>
+*The added gear score to the equipment icons with pfUI.*<br><br><br>
+<img width="301" height="344" alt="bags-vanilla" src="https://github.com/user-attachments/assets/dde036de-b09f-4369-adc4-edac51c485e7" /><br>
+*The added gear score to the equipment icons with the default UI.*<br><br><br>
+<img width="286" height="500" alt="settings" src="https://github.com/user-attachments/assets/6231e17d-1f77-4301-b8b3-c90919729ee3" /><br>
+*The available settings.*
 
 ## Installation
 
