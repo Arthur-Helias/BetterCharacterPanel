@@ -450,35 +450,6 @@ local function BCP_Refresh(unit, prefix)
         end
     end
 
-    if not BCPConfig.GearScore.ShowOnCharPanel and BCPPFUIGearScoreCharacterSection then
-        BCPPFUIGearScoreCharacterSection:Hide()
-    elseif BCPPFUIGearScoreCharacterSection then
-        BCPPFUIGearScoreCharacterSection:Show()
-    end
-
-    if not BCPConfig.GearScore.ShowOnInspect and BCPPFUIGearScoreInspectSection then
-        BCPPFUIGearScoreInspectSection:Hide()
-    elseif BCPPFUIGearScoreInspectSection then
-        BCPPFUIGearScoreInspectSection:Show()
-    end
-
-    local totalIL = 0
-    local slots = BCPLib:IsUsingTwoHandedWeapon(unit) and 16 or 17
-
-    for _, info in ipairs(BCP_SLOTS) do
-        local il = BCPLib:GetGearScoreFromEquipmentSlot(unit, info.slotId)
-
-        if il then
-            totalIL = totalIL + il
-        end
-    end
-
-    local gsText = skin:GetGearScoreText(unit)
-
-    if gsText then
-        gsText:SetText(tostring(math.floor(totalIL / slots)))
-    end
-
     for _, info in ipairs(BCP_SLOTS) do
         local tag = info.tag
         local permText, tempText, isMissing = GetEnchantTexts(unit, info.slotId, info.libSlot)
@@ -519,18 +490,6 @@ local function BCP_Refresh(unit, prefix)
                 missingTex:Show()
             else
                 missingTex:Hide()
-            end
-        end
-
-        local ilFS = getglobal(prefix .. tag .. "_IL")
-
-        if ilFS and BCPConfig.GearScore.ShowOnIcons then
-            local il = BCPLib:GetGearScoreFromEquipmentSlot(unit, info.slotId)
-
-            if il and il ~= 0 then
-                ilFS:SetText(BCPLib:GetColorFromEquipmentSlot(unit, info.slotId) .. tostring(il))
-            else
-                ilFS:SetText("")
             end
         end
     end

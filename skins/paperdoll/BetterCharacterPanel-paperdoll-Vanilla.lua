@@ -67,29 +67,13 @@ skin.Config = {
     InfoFrameWidth = 170,
     InfoFrameHeightPadding = 40,
 
-    -- Character frame's gear score section
-    GearScoreSectionWidth = 140,
-    GearScoreSectionHeight = 30,
-    GearScoreSectionTopPad = -30,
-    GearScoreLabelFontSize = 12,
-    GearScoreLabelTopOffset = 16,
-    GearScoreValueFontSize = 54,
-
-    -- Inspect frame's gear score section
-    InspectGearScoreSectionWidth = 60,
-    InspectGearScoreSectionHeight = 14,
-    InspectGearScoreAnchorY = -11,
-    InspectGearScoreLabelFontSize = 8,
-    InspectGearScoreLabelTopOffset = 9,
-    InspectGearScoreValueFontSize = 12,
-
     -- Resistance icons
     ResistanceItemWidth = 20,
     ResistanceFrameHeight = 20,
     ResistanceItemSpacing = 8,
 
     -- Scroll frame
-    ScrollTopPad = 100,
+    ScrollTopPad = 45,
     ScrollBottomPad = 15,
 
     -- Backdrop
@@ -148,14 +132,6 @@ function skin:GetStatFrameFonts()
     return "GameFontNormalSmall", "GameFontHighlightSmall"
 end
 
-function skin:GetGearScoreText(unit)
-    if unit == "player" then
-        return getglobal("BCPVanillaGearScoreTextCharacter")
-    else
-        return getglobal("BCPVanillaGearScoreTextInspect")
-    end
-end
-
 -- =============================
 -- =   Character Frame Hooks   =
 -- =============================
@@ -167,80 +143,10 @@ function skin:OnCharacterFrameTabClick() end
 
 function skin:OnCharacterFrameShowSubFrame() end
 
-local function BCP_CreateGearScoreSection(parent, sectionName, labelName, textName, sectionW, sectionH, anchorPt,
-                                          anchorRelTo, anchorRelPt, anchorX, anchorY, labelFont, labelSize,
-                                          labelTopOffset, textFont, textSize)
-    local section = CreateFrame("Frame", sectionName, parent)
-    section:SetWidth(sectionW)
-    section:SetHeight(sectionH)
-    section:SetPoint(anchorPt, anchorRelTo, anchorRelPt, anchorX, anchorY)
-
-    -- Gradient background
-    local bgL = section:CreateTexture(nil, "BACKGROUND")
-    bgL:SetTexture("Interface\\Buttons\\WHITE8x8")
-    bgL:SetPoint("TOPLEFT", section, "TOPLEFT", 0, 0)
-    bgL:SetPoint("BOTTOMRIGHT", section, "BOTTOM", 0, 0)
-    bgL:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 0, 0, 0, 0, 0.55)
-    section.Background = bgL
-
-    local bgR = section:CreateTexture(nil, "BACKGROUND")
-    bgR:SetTexture("Interface\\Buttons\\WHITE8x8")
-    bgR:SetPoint("TOPLEFT", section, "TOP", 0, 0)
-    bgR:SetPoint("BOTTOMRIGHT", section, "BOTTOMRIGHT", 0, 0)
-    bgR:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 0.55, 0, 0, 0, 0)
-
-    -- Top separator line
-    local topL = section:CreateTexture(nil, "BORDER")
-    topL:SetTexture("Interface\\Buttons\\WHITE8x8")
-    topL:SetHeight(1)
-    topL:SetPoint("TOPLEFT", section, "TOPLEFT", 0, 0)
-    topL:SetPoint("TOPRIGHT", section, "TOP", 0, 0)
-    topL:SetGradientAlpha("HORIZONTAL", 1, 0.84, 0, 0, 1, 0.84, 0, 0.9)
-    section.TopLine = topL
-
-    local topR = section:CreateTexture(nil, "BORDER")
-    topR:SetTexture("Interface\\Buttons\\WHITE8x8")
-    topR:SetHeight(1)
-    topR:SetPoint("TOPLEFT", section, "TOP", 0, 0)
-    topR:SetPoint("TOPRIGHT", section, "TOPRIGHT", 0, 0)
-    topR:SetGradientAlpha("HORIZONTAL", 1, 0.84, 0, 0.9, 1, 0.84, 0, 0)
-
-    -- Bottom separator line
-    local botL = section:CreateTexture(nil, "BORDER")
-    botL:SetTexture("Interface\\Buttons\\WHITE8x8")
-    botL:SetHeight(1)
-    botL:SetPoint("BOTTOMLEFT", section, "BOTTOMLEFT", 0, 0)
-    botL:SetPoint("BOTTOMRIGHT", section, "BOTTOM", 0, 0)
-    botL:SetGradientAlpha("HORIZONTAL", 1, 0.84, 0, 0, 1, 0.84, 0, 0.9)
-    section.BottomLine = botL
-
-    local botR = section:CreateTexture(nil, "BORDER")
-    botR:SetTexture("Interface\\Buttons\\WHITE8x8")
-    botR:SetHeight(1)
-    botR:SetPoint("BOTTOMLEFT", section, "BOTTOM", 0, 0)
-    botR:SetPoint("BOTTOMRIGHT", section, "BOTTOMRIGHT", 0, 0)
-    botR:SetGradientAlpha("HORIZONTAL", 1, 0.84, 0, 0.9, 1, 0.84, 0, 0)
-
-    -- Label
-    local label = section:CreateFontString(labelName, "OVERLAY")
-    label:SetFont(labelFont, labelSize, "OUTLINE")
-    label:SetPoint("TOP", section, "TOP", 0, labelTopOffset)
-    label:SetTextColor(1, 1, 1)
-    label:SetText(BCP_ILVL_LABEL)
-
-    -- Value
-    local value = section:CreateFontString(textName, "OVERLAY")
-    value:SetFont(textFont, textSize, "OUTLINE")
-    value:SetPoint("CENTER", section, "CENTER", 0, 0)
-    value:SetTextColor(1, 0.84, 0)
-
-    return section
-end
-
-local function BCP_AnchorResistanceFrame(infoFrame, belowSection, cfg)
+local function BCP_AnchorResistanceFrame(infoFrame, aboveSection, cfg)
     CharacterResistanceFrame:SetParent(infoFrame)
     CharacterResistanceFrame:ClearAllPoints()
-    CharacterResistanceFrame:SetPoint("TOP", belowSection, "BOTTOM", -2, -4)
+    CharacterResistanceFrame:SetPoint("BOTTOM", aboveSection, "TOP", -6, 12)
 
     local xOffset = 0
 
@@ -284,32 +190,6 @@ function skin:OnPaperDollShow()
         infoFrame:SetBackdropBorderColor(1, 1, 1, 1)
     end
 
-    -- O――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――O
-    -- |   The gearscore background design comes from ReforgedArmory by Repooc.   |
-    -- O――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――O
-    if BCPVanillaCharacterInformationFrame and not BCPVanillaGearScoreCharacterSection then
-        BCP_CreateGearScoreSection(
-            BCPVanillaCharacterInformationFrame,
-            "BCPVanillaGearScoreCharacterSection",
-            "BCPVanillaGearScoreLabelTextCharacter",
-            "BCPVanillaGearScoreTextCharacter",
-            cfg.GearScoreSectionWidth,
-            cfg.GearScoreSectionHeight,
-            "TOP", BCPVanillaCharacterInformationFrame, "TOP", 0, cfg.GearScoreSectionTopPad,
-            cfg.TitleFont, cfg.GearScoreLabelFontSize, cfg.GearScoreLabelTopOffset,
-            cfg.TitleFont, cfg.GearScoreValueFontSize
-        )
-    end
-
-    if BCPVanillaGearScoreCharacterSection and CharacterResistanceFrame and not BCPVanillaResistanceAnchored then
-        BCP_AnchorResistanceFrame(BCPVanillaCharacterInformationFrame, BCPVanillaGearScoreCharacterSection, cfg)
-        BCPVanillaResistanceAnchored = true
-    end
-
-    if CharacterResistanceFrame then
-        CharacterResistanceFrame:Show()
-    end
-
     if not BCPVanillaStatsScrollFrame and BCPVanillaCharacterInformationFrame and CharacterResistanceFrame then
         local scrollFrame = CreateFrame("ScrollFrame", "BCPVanillaStatsScrollFrame", BCPVanillaCharacterInformationFrame)
         scrollFrame:SetPoint("TOPLEFT", BCPVanillaCharacterInformationFrame, "TOPLEFT", 12, -cfg.ScrollTopPad)
@@ -351,6 +231,15 @@ function skin:OnPaperDollShow()
             end
         end)
     end
+
+    if BCPVanillaStatsScrollFrame and CharacterResistanceFrame and not BCPVanillaResistanceAnchored then
+        BCP_AnchorResistanceFrame(BCPVanillaCharacterInformationFrame, BCPVanillaStatsScrollFrame, cfg)
+        BCPVanillaResistanceAnchored = true
+    end
+
+    if CharacterResistanceFrame then
+        CharacterResistanceFrame:Show()
+    end
 end
 
 -- ======================================
@@ -360,23 +249,6 @@ function skin:OnInspectShow()
     -- Allows click rotating the character's model instead of using the arrows
     if InspectModelFrame then
         BCPLib:EnableClickRotate(InspectModelFrame)
-    end
-
-    local cfg = self.Config
-
-    if not BCPVanillaGearScoreInspectSection then
-        BCP_CreateGearScoreSection(
-            InspectPaperDollFrame,
-            "BCPVanillaGearScoreInspectSection",
-            "BCPVanillaGearScoreLabelTextInspect",
-            "BCPVanillaGearScoreTextInspect",
-            cfg.InspectGearScoreSectionWidth,
-            cfg.InspectGearScoreSectionHeight,
-            "TOP", InspectLevelText, "BOTTOM", 0, cfg.InspectGearScoreAnchorY,
-            cfg.TitleFont, cfg.InspectGearScoreLabelFontSize,
-            cfg.InspectGearScoreLabelTopOffset,
-            cfg.TitleFont, cfg.InspectGearScoreValueFontSize
-        )
     end
 end
 

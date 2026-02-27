@@ -1,5 +1,5 @@
 BCP_VERSION_MAJOR = "1"
-BCP_VERSION_MINOR = "0"
+BCP_VERSION_MINOR = "1"
 BCP_VERSION_PATCH = "0"
 
 BCP_IS_USING_PFUI = false
@@ -37,14 +37,5 @@ BCP_InitFrame:SetScript("OnEvent", function()
     if not GetNampowerVersion and BCPNotifications then
         BCPNotifications:CreateNampowerError()
         return
-    end
-
-    -- Initialize SavedVariables
-    if event == "VARIABLES_LOADED" then
-        if not BCPUnitsIlvlCache then
-            BCPUnitsIlvlCache = {}
-        end
-
-        BCP_InitFrame:UnregisterEvent("VARIABLES_LOADED")
     end
 end)

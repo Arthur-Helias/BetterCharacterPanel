@@ -37,16 +37,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Head_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterHeadSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Neck_Perm"
@@ -77,16 +67,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Neck_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterNeckSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <FontString name="BCP_Shoulder_Perm"
                     inherits="GameFontHighlightSmall" justifyH="LEFT">
@@ -125,17 +105,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Shoulder_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterShoulderSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Back_Perm"
@@ -166,16 +135,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Back_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterBackSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Chest_Perm"
@@ -206,17 +165,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Chest_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterChestSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: WristsIconPermEnchantOffsets -->
                 <FontString name="BCP_Wrist_Perm"
@@ -247,17 +195,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Wrist_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterWristSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Hands_Perm"
@@ -288,17 +225,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Hands_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterHandsSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Waist_Perm"
@@ -329,17 +255,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Waist_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterWaistSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Legs_Perm"
@@ -370,16 +285,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Legs_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterLegsSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Feet_Perm"
@@ -410,16 +315,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Feet_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterFeetSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Finger1_Perm"
@@ -450,17 +345,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Finger1_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterFinger0Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Finger2_Perm"
@@ -491,41 +375,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Finger2_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterFinger1Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-
-                <FontString name="BCP_Trinket1_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterTrinket0Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-
-                <FontString name="BCP_Trinket2_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterTrinket1Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_FRAME_VALUES: MainHandIconPermEnchantOffsets -->
                 <FontString name="BCP_MainHand_Perm"
@@ -558,17 +407,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_MainHand_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterMainHandSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_FRAME_VALUES: OffHandIconPermEnchantOffsets -->
                 <FontString name="BCP_SecondaryHand_Perm"
@@ -601,17 +439,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_SecondaryHand_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterSecondaryHandSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_FRAME_VALUES: RangedIconPermEnchantOffsets -->
                 <FontString name="BCP_Ranged_Perm"
@@ -644,18 +471,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Ranged_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="CharacterRangedSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-
             </Layer>
         </Layers>
     </Frame>
@@ -696,16 +511,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Head_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectHeadSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Neck_Perm"
@@ -736,16 +541,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Neck_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectNeckSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Shoulder_Perm"
@@ -776,17 +571,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Shoulder_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectShoulderSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Back_Perm"
@@ -817,16 +601,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Back_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectBackSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: LeftIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Chest_Perm"
@@ -857,16 +631,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Chest_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectChestSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: WristsIconPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Wrist_Perm"
@@ -897,16 +661,6 @@
                             relativePoint="TOPRIGHT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Wrist_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectWristSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Hands_Perm"
@@ -937,16 +691,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Hands_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectHandsSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Waist_Perm"
@@ -977,16 +721,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Waist_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectWaistSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Legs_Perm"
@@ -1017,16 +751,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Legs_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectLegsSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Feet_Perm"
@@ -1057,16 +781,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Feet_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectFeetSlot" relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Finger1_Perm"
@@ -1097,17 +811,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Finger1_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectFinger0Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_CHARACTER_FRAME_VALUES: RightIconsPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Finger2_Perm"
@@ -1138,40 +841,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Finger2_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectFinger1Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-
-                <FontString name="BCP_Inspect_Trinket1_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectTrinket0Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-                <FontString name="BCP_Inspect_Trinket2_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectTrinket1Slot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_FRAME_VALUES: MainHandIconPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_MainHand_Perm"
@@ -1204,17 +873,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_MainHand_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectMainHandSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_FRAME_VALUES: OffHandIconPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_SecondaryHand_Perm"
@@ -1247,17 +905,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_SecondaryHand_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectSecondaryHandSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
 
                 <!-- BCP_FRAME_VALUES: RangedIconPermEnchantOffsets -->
                 <FontString name="BCP_Inspect_Ranged_Perm"
@@ -1290,17 +937,6 @@
                             relativePoint="TOPLEFT" />
                     </Anchors>
                 </Texture>
-                <FontString name="BCP_Inspect_Ranged_IL"
-                    inherits="NumberFontNormal" justifyH="CENTER">
-                    <Anchors>
-                        <Anchor point="BOTTOM" relativeTo="InspectRangedSlot"
-                            relativePoint="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="0" y="2" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
             </Layer>
         </Layers>
     </Frame>

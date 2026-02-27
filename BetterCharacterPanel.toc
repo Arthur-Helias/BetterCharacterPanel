@@ -1,7 +1,6 @@
 ## Interface: 11200
 ## Title: Better Character Panel
-## Version: 1.0
-## SavedVariables: BCPUnitsIlvlCache
+## Version: 1.1.0
 ## SavedVariablesPerCharacter: BCPConfig
 ## Author: Walter Bennet
 ## Notes: Improves the default character and inspect panel!
@@ -20,12 +19,6 @@ locale\BetterCharacterPanel-zhCN.lua
 BetterCharacterPanel-dbenchants.lua
 BetterCharacterPanel-lib.lua
 BetterCharacterPanel-config.lua
-
-# Gear Score Integration Skins
-skins\ilvl\BetterCharacterPanel-ilvl-pfUI.lua
-skins\ilvl\BetterCharacterPanel-ilvl-Vanilla.lua
-
-BetterCharacterPanel-ilvl.lua
 
 # Paperdoll Skins
 skins\paperdoll\BetterCharacterPanel-paperdoll-Vanilla.lua

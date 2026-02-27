@@ -189,38 +189,6 @@ function BCPLib:GetItemLevelFromEquipmentSlot(unit, slot)
     return result
 end
 
-function BCPLib:GetGearScoreFromEquipmentSlot(unit, slot)
-    local okEquippedItem, itemInfo = pcall(GetEquippedItem, unit, slot)
-
-    if not okEquippedItem or not itemInfo then
-        return nil
-    end
-
-    return BCPLib:GetGearScoreFromItemId(itemInfo.itemId)
-end
-
-function BCPLib:GetGearScoreFromItemId(itemId)
-    local okStatFieldQuality, quality = pcall(GetItemStatsField, itemId, "quality")
-
-    if not okStatFieldQuality or not quality then
-        return nil
-    end
-
-    local okStatFieldInvType, invType = pcall(GetItemStatsField, itemId, "inventoryType")
-
-    if not okStatFieldInvType or not invType then
-        return nil
-    end
-
-    local okItemLevel, itemLevel = pcall(GetItemLevel, itemId)
-
-    if not okItemLevel or not itemLevel then
-        return nil
-    end
-
-    return math.floor(((quality * itemLevel) * (invType == 17 and 2 or 1) * 0.8) + 0.5)
-end
-
 function BCPLib:GetColorFromEquipmentSlot(unit, slot)
     local itemInfo = GetEquippedItem(unit, slot)
 

@@ -6,12 +6,6 @@ local BCP_CONFIG_DEFAULTS = {
         X = 0,
         Y = 0,
     },
-    GearScore = {
-        ShowOnIcons = true,
-        ShowOnCharPanel = true,
-        ShowOnInspect = true,
-        ShowOnTooltips = true,
-    },
     PermanentEnchants = {
         ShowOnCharPanel = true,
         ShowOnInspect = true,
@@ -162,7 +156,6 @@ local CFG_CONTENT_W = 280
 local CFG_ITEM_H = 24
 local CFG_SECTION_H = 22
 local CFG_INDENT = 16
-local CFG_SUB_INDENT = 32
 
 local function BCP_AddSectionHeader(parent, text, yOffset)
     local label = parent:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -221,13 +214,6 @@ local function BCP_AddCheckbox(parent, name, labelText, tooltipText, section, ke
     end
 
     return yOffset - CFG_ITEM_H
-end
-
-local function BCP_AddSubLabel(parent, labelText, xIndent, yOffset)
-    local lbl = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-    lbl:SetPoint("TOPLEFT", parent, "TOPLEFT", xIndent, yOffset)
-    lbl:SetText(labelText)
-    return yOffset - (CFG_ITEM_H - 4)
 end
 
 local function BCP_AddQualityDropdown(parent, xIndent, yOffset)
@@ -412,18 +398,6 @@ local function BCP_CreateConfigFrame()
             BCP_UpdateMinimapButtonPosition()
         end)
     end
-    y = y - 4
-
-    -- Gear Score
-    y = BCP_AddSectionHeader(content, BCP_CONFIG_SEC_GEARSCORE, y)
-    y = BCP_AddCheckbox(content, "GsShowOnIcons", BCP_CONFIG_GS_SHOW_ICONS, BCP_CONFIG_GS_SHOW_ICONS_TT, "GearScore",
-        "ShowOnIcons", CFG_INDENT, y)
-    y = BCP_AddSubLabel(content, BCP_CONFIG_GS_SHOW_AVG, CFG_INDENT, y)
-    y = BCP_AddCheckbox(content, "GsCharPanel", BCP_CONFIG_GS_CHAR_PANEL, nil, "GearScore", "ShowOnCharPanel",
-        CFG_SUB_INDENT, y)
-    y = BCP_AddCheckbox(content, "GsInspect", BCP_CONFIG_GS_INSPECT, nil, "GearScore", "ShowOnInspect", CFG_SUB_INDENT, y)
-    y = BCP_AddCheckbox(content, "GsTooltips", BCP_CONFIG_GS_TOOLTIPS, nil, "GearScore", "ShowOnTooltips", CFG_SUB_INDENT,
-        y)
     y = y - 4
 
     -- Permanent Enchants

@@ -10,15 +10,6 @@ BCP_CONFIG_FREE_MINIMAP = "Free Minimap Button"
 BCP_CONFIG_FREE_MINIMAP_TT =
 "When enabled, the minimap button can be freely dragged anywhere on screen.\nWhen disabled, it orbits around the minimap."
 
--- Section: Gear Score
-BCP_CONFIG_SEC_GEARSCORE = "Gear Score"
-BCP_CONFIG_GS_SHOW_ICONS = "Show Gear Score On Icons"
-BCP_CONFIG_GS_SHOW_ICONS_TT = "Displays the item's gear score directly on its equipment icons."
-BCP_CONFIG_GS_SHOW_AVG = "Show Average Gear Score On:"
-BCP_CONFIG_GS_CHAR_PANEL = "Character Panel"
-BCP_CONFIG_GS_INSPECT = "Inspect Panel"
-BCP_CONFIG_GS_TOOLTIPS = "Tooltips"
-
 -- Section: Permanent Enchants
 BCP_CONFIG_SEC_PERM_ENCH = "Permanent Enchants"
 BCP_CONFIG_PE_CHAR_PANEL = "Show On Character Panel"
@@ -52,7 +43,6 @@ BCP_ERR_NAM =
 "|cffff4444Nampower|r is required for this addon to work.\nInstall it from the link below, then restart your game."
 
 -- Paperdoll Panel
-BCP_ILVL_LABEL = "Gear Score"
 BCP_ENCHANTED = "Enchanted"
 BCP_TEMP_ENCHANT = "Temp Ench"
 
