@@ -18,7 +18,16 @@ local BCP_CONFIG_DEFAULTS = {
         Show = true,
         OnlyAtLevel60 = false,
         MinimumQuality = 3,
-    }
+    },
+    StatPanel = {
+        FontScale = 1.0,
+    },
+    CharacterPanel = {
+        EnchantFontScale = 1.0,
+    },
+    InspectPanel = {
+        EnchantFontScale = 1.0,
+    },
 }
 
 local BCP_MINIMAP_RADIUS = 80
@@ -282,6 +291,58 @@ local function BCP_AddQualityDropdown(parent, xIndent, yOffset)
     return yOffset - CFG_ITEM_H - 24
 end
 
+local function BCP_AddFontScaleSlider(parent, xIndent, yOffset, sliderName, section, key, tooltipText)
+    local label = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+    label:SetPoint("TOPLEFT", parent, "TOPLEFT", xIndent, yOffset)
+    label:SetText(BCP_CONFIG_FONT_SCALE)
+
+    local slider = CreateFrame("Slider", sliderName, parent, "OptionsSliderTemplate")
+    slider:SetPoint("TOPLEFT", parent, "TOPLEFT", xIndent + 8, yOffset - 18)
+    slider:SetWidth(CFG_CONTENT_W - xIndent - 36)
+    slider:SetHeight(17)
+    slider:SetOrientation("HORIZONTAL")
+    slider:SetMinMaxValues(0.75, 2.0)
+    slider:SetValueStep(0.05)
+    slider:SetValue(BCPConfig[section][key])
+
+    getglobal(sliderName .. "Low"):SetText("0.75x")
+    getglobal(sliderName .. "High"):SetText("2.00x")
+    getglobal(sliderName .. "Text"):SetText(string.format("%.2fx", BCPConfig[section][key]))
+
+    if tooltipText then
+        local ttBtn = CreateFrame("Button", nil, parent)
+        ttBtn:SetWidth(16)
+        ttBtn:SetHeight(16)
+        ttBtn:SetPoint("LEFT", label, "RIGHT", 4, 0)
+        ttBtn:SetScript("OnEnter", function()
+            GameTooltip:SetOwner(this, "ANCHOR_CURSOR")
+            GameTooltip:SetText(tooltipText, nil, nil, nil, nil, true)
+            GameTooltip:Show()
+        end)
+        ttBtn:SetScript("OnLeave", function()
+            GameTooltip:Hide()
+        end)
+
+        local ttIcon = ttBtn:CreateTexture(nil, "OVERLAY")
+        ttIcon:SetTexture("Interface\\Common\\UI-Searchbox-Icon")
+        ttIcon:SetWidth(14)
+        ttIcon:SetHeight(14)
+        ttIcon:SetAllPoints(ttBtn)
+    end
+
+    slider:SetScript("OnValueChanged", function()
+        local snapped = math.floor(this:GetValue() * 20 + 0.5) / 20
+        BCPConfig[section][key] = snapped
+        getglobal(sliderName .. "Text"):SetText(string.format("%.2fx", snapped))
+    end)
+
+    local reloadNote = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    reloadNote:SetPoint("TOPLEFT", slider, "BOTTOMLEFT", -8, -6)
+    reloadNote:SetText("|cff888888" .. BCP_CONFIG_FONT_SCALE_RELOAD .. "|r")
+
+    return yOffset - CFG_ITEM_H - 48
+end
+
 local function BCP_SkinConfigFrame()
     if BCP_IS_USING_PFUI then
         pfUI.api.CreateBackdrop(BCPConfigFrame, nil, nil, 0.75)
@@ -400,20 +461,26 @@ local function BCP_CreateConfigFrame()
     end
     y = y - 4
 
-    -- Permanent Enchants
-    y = BCP_AddSectionHeader(content, BCP_CONFIG_SEC_PERM_ENCH, y)
+    -- Character Panel Enchants
+    y = BCP_AddSectionHeader(content, BCP_CONFIG_SEC_CHAR_ENCHANTS, y)
     y = BCP_AddCheckbox(content, "PeCharPanel", BCP_CONFIG_PE_CHAR_PANEL, nil, "PermanentEnchants", "ShowOnCharPanel",
         CFG_INDENT, y)
-    y = BCP_AddCheckbox(content, "PeInspect", BCP_CONFIG_PE_INSPECT, nil, "PermanentEnchants", "ShowOnInspect",
+    y = BCP_AddCheckbox(content, "TeCharPanel", BCP_CONFIG_TE_CHAR_PANEL, nil, "TemporaryEnchants", "ShowOnCharPanel",
         CFG_INDENT, y)
+    y = BCP_AddFontScaleSlider(content, CFG_INDENT, y,
+        "BCPCharEnchantFontScaleSlider", "CharacterPanel", "EnchantFontScale",
+        BCP_CONFIG_CHAR_ENCHANT_FONT_SCALE_TT)
     y = y - 4
 
-    -- Temporary Enchants
-    y = BCP_AddSectionHeader(content, BCP_CONFIG_SEC_TEMP_ENCH, y)
-    y = BCP_AddCheckbox(content, "TeCharPanel", BCP_CONFIG_TE_CHAR_PANEL, nil, "TemporaryEnchants", "ShowOnCharPanel",
+    -- Inspect Panel Enchants
+    y = BCP_AddSectionHeader(content, BCP_CONFIG_SEC_INSPECT_ENCHANTS, y)
+    y = BCP_AddCheckbox(content, "PeInspect", BCP_CONFIG_PE_INSPECT, nil, "PermanentEnchants", "ShowOnInspect",
         CFG_INDENT, y)
     y = BCP_AddCheckbox(content, "TeInspect", BCP_CONFIG_TE_INSPECT, nil, "TemporaryEnchants", "ShowOnInspect",
         CFG_INDENT, y)
+    y = BCP_AddFontScaleSlider(content, CFG_INDENT, y,
+        "BCPInspectEnchantFontScaleSlider", "InspectPanel", "EnchantFontScale",
+        BCP_CONFIG_INSPECT_ENCHANT_FONT_SCALE_TT)
     y = y - 4
 
     -- Missing Enchants
@@ -422,9 +489,15 @@ local function BCP_CreateConfigFrame()
         CFG_INDENT, y)
     y = BCP_AddCheckbox(content, "MeLvl60", BCP_CONFIG_ME_LVL60, BCP_CONFIG_ME_LVL60_TT, "MissingEnchants",
         "OnlyAtLevel60", CFG_INDENT, y)
-    y = y - 4
     y = BCP_AddQualityDropdown(content, CFG_INDENT, y)
     y = y - 4
+
+    -- Stat Panel
+    y = BCP_AddSectionHeader(content, BCP_CONFIG_SEC_STAT_PANEL, y)
+    y = BCP_AddFontScaleSlider(content, CFG_INDENT, y,
+        "BCPStatPanelFontScaleSlider", "StatPanel", "FontScale", BCP_CONFIG_FONT_SCALE_TT)
+    y = y - 4
+
     y = y - 8 -- Bottom padding
 
     local contentHeight = math.abs(y)

@@ -84,7 +84,7 @@ skin.Config = {
     BackdropInsets = { left = 12, right = 12, top = 12, bottom = 11 },
 
     -- BCS stats frame
-    StatValueWidth = 40,
+    StatValueWidth = 60,
     StatValueRightPad = 9,
     StatValueFontSize = 9,
     StatLabelRightPad = 10,
@@ -175,10 +175,13 @@ function skin:OnPaperDollShow()
     end
 
     if PaperDollFrame and not BCPVanillaCharacterInformationFrame then
+        local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+        local scaledInfoWidth = math.floor(cfg.InfoFrameWidth * fontScale)
+
         local infoFrame = CreateFrame("Frame", "BCPVanillaCharacterInformationFrame", PaperDollFrame)
         infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)
         infoFrame:SetHeight(PaperDollFrame:GetHeight() - cfg.InfoFrameHeightPadding)
-        infoFrame:SetWidth(cfg.InfoFrameWidth)
+        infoFrame:SetWidth(scaledInfoWidth)
         infoFrame:SetBackdrop({
             bgFile = cfg.BackdropBgFile,
             tile = true,

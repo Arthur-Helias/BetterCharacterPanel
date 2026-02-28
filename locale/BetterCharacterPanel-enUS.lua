@@ -30,6 +30,23 @@ BCP_CONFIG_ME_MIN_QUALITY = "Minimum Quality:"
 BCP_CONFIG_ME_MIN_QUALITY_TT =
 "Only flag a slot as missing an enchant if the equipped item meets this minimum quality threshold."
 
+-- Section: Stat Panel
+BCP_CONFIG_SEC_STAT_PANEL = "Stat Panel"
+BCP_CONFIG_FONT_SCALE = "Font Scale"
+BCP_CONFIG_FONT_SCALE_TT =
+"Scales the size of all text and column widths in the stat panel.\nRequires a UI reload to take effect."
+BCP_CONFIG_FONT_SCALE_RELOAD = "* Reload UI to apply changes"
+
+-- Section: Character Panel Enchants
+BCP_CONFIG_SEC_CHAR_ENCHANTS = "Character Panel - Enchant Text"
+BCP_CONFIG_CHAR_ENCHANT_FONT_SCALE_TT =
+"Scales the size of the enchant text shown next to equipment slots on the character panel.\nRequires a UI reload to take effect."
+
+-- Section: Inspect Panel Enchants
+BCP_CONFIG_SEC_INSPECT_ENCHANTS = "Inspect Panel - Enchant Text"
+BCP_CONFIG_INSPECT_ENCHANT_FONT_SCALE_TT =
+"Scales the size of the enchant text shown next to equipment slots on the inspect panel.\nRequires a UI reload to take effect."
+
 -- Quality dropdown choices
 BCP_CONFIG_QUALITY_0 = "Poor"
 BCP_CONFIG_QUALITY_1 = "Common"

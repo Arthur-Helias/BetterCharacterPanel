@@ -21,7 +21,7 @@ BCP_InitFrame:SetScript("OnEvent", function()
     BCP_InitFrame:UnregisterEvent("PLAYER_LOGIN")
 
     -- UI detection
-    if pfUI and pfUI.bag and pfUI.bag.UpdateSlot then
+    if IsAddOnLoaded("pfUI") and pfUI and pfUI.api then
         BCP_IS_USING_PFUI = true
 
         if pfUI.skin and pfUI.skin["Character Frame Turtle"] then
@@ -29,7 +29,7 @@ BCP_InitFrame:SetScript("OnEvent", function()
         end
     end
 
-    if BCS then
+    if IsAddOnLoaded("BetterCharacterStats") and BCS and BCSFrame then
         BCP_IS_USING_BCS = true
     end
 

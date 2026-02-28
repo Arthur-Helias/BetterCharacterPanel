@@ -223,10 +223,13 @@ function skin:OnPaperDollShow()
     end
 
     if PaperDollFrame and not BCPPFUICharacterInformationFrame then
+        local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+        local scaledInfoWidth = math.floor(cfg.InfoFrameWidth * fontScale)
+
         local infoFrame = CreateFrame("Frame", "BCPPFUICharacterInformationFrame", PaperDollFrame)
         infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)
         infoFrame:SetHeight(PaperDollFrame:GetHeight() + 19 - cfg.InfoFrameHeightPadding)
-        infoFrame:SetWidth(cfg.InfoFrameWidth)
+        infoFrame:SetWidth(scaledInfoWidth)
         infoFrame:EnableMouse(true)
         infoFrame:RegisterForDrag("LeftButton")
         infoFrame:SetScript("OnDragStart", function()
