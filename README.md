@@ -21,7 +21,7 @@ An addon that improves the character panel and the inspect panel by displaying p
 *The inspect panel with pfUI.*<br><br><br>
 <img width="376" height="500" alt="inspect-vanilla" src="https://github.com/user-attachments/assets/6fc24c99-434e-45a9-98a8-ffc088034299" /><br>
 *The inspect panel with the default UI.*<br><br><br>
-<img width="245" height="500" alt="settings" src="https://github.com/user-attachments/assets/de834f82-db6c-47ca-adfa-54e0d985fd79" /><br>
+<img width="245" height="500" alt="settings" src="https://github.com/user-attachments/assets/65d28aaa-a5a4-475f-a475-03e347d9389e" /><br>
 *The available settings.*
 
 ## Installation
