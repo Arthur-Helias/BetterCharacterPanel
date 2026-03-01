@@ -51,7 +51,7 @@ Please report any issues you encounter through the `Issues` tab on this reposito
 ## Compatibility
 
 This addon was designed and tested for TurtleWoW.
-This addon is only compatible with the default interface and pfUI. The addon should remain somewhat functional with other interface addons, but the compatibility is not guaranteed.
+This addon was designed and tested with the default interface and pfUI. The addon should remain somewhat functional with other interface addons, but the compatibility is not guaranteed.
 
 ## Addon Recommendations
 
