@@ -533,7 +533,8 @@ BCP_ConfigInitFrame:SetScript("OnEvent", function()
         BCP_OpenConfig = BCP_ToggleConfigFrame
     end
 
-    if event == "PLAYER_ENTERING_WORLD" then
+    if event == "PLAYER_ENTERING_WORLD" and not BCP_ConfigFrameSkinned then
         BCP_SkinConfigFrame()
+        BCP_ConfigFrameSkinned = true
     end
 end)

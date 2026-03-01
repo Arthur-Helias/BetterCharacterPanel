@@ -2,6 +2,12 @@
 
 All changes to this project will be documented in this file.
 
+## [1.2.2] - 2026-03-01
+
+### Fixed
+
+- Fixed skinning being reaplied on each PLAYER_ENTERING_WORLD, making the labels of the slider drift off
+
 ## [1.2.1] - 2026-03-01
 
 ### Added
