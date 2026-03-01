@@ -337,7 +337,7 @@ local function BCP_AddFontScaleSlider(parent, xIndent, yOffset, sliderName, sect
     end)
 
     local reloadNote = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    reloadNote:SetPoint("TOPLEFT", slider, "BOTTOMLEFT", -8, -6)
+    reloadNote:SetPoint("TOPLEFT", slider, "BOTTOMLEFT", -8, -18)
     reloadNote:SetText("|cff888888" .. BCP_CONFIG_FONT_SCALE_RELOAD .. "|r")
 
     return yOffset - CFG_ITEM_H - 48
@@ -355,6 +355,10 @@ local function BCP_SkinConfigFrame()
         for _, child in ipairs({ BCPConfigContent:GetChildren() }) do
             if child:GetObjectType() == "CheckButton" then
                 pfUI.api.SkinCheckbox(child)
+            end
+
+            if child:GetObjectType() == "Slider" then
+                pfUI.api.SkinSlider(child)
             end
         end
     end

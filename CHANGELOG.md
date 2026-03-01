@@ -2,6 +2,12 @@
 
 All changes to this project will be documented in this file.
 
+## [1.2.1] - 2026-03-01
+
+### Added
+
+- Added minimum width to the stat frame based on the resistance frame to (hopefully) prevent overlapping
+
 ## [1.2.0] - 2026-03-01
 
 ### Added

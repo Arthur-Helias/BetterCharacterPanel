@@ -225,6 +225,11 @@ function skin:OnPaperDollShow()
     if PaperDollFrame and not BCPPFUICharacterInformationFrame then
         local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
         local scaledInfoWidth = math.floor(cfg.InfoFrameWidth * fontScale)
+        local resistanceFrameWidth = ((cfg.ResistanceItemWidth + cfg.ResistanceItemSpacing) * 5) - cfg.ResistanceItemSpacing
+
+        if scaledInfoWidth <= resistanceFrameWidth then
+            scaledInfoWidth = resistanceFrameWidth + 15
+        end
 
         local infoFrame = CreateFrame("Frame", "BCPPFUICharacterInformationFrame", PaperDollFrame)
         infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)

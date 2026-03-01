@@ -141,12 +141,8 @@ local function BCP_Init(prefix, frameValues)
         end
     end
 
-    -- Apply enchant font scale for this specific panel.
-    -- "BCP_"         → CharacterPanel.EnchantFontScale
-    -- "BCP_Inspect_" → InspectPanel.EnchantFontScale
-    -- BCPConfig is guaranteed to exist by the time BCP_Init is first called
-    -- (VARIABLES_LOADED fires before the first panel open).
     local enchantCfgSection
+
     if prefix == "BCP_" then
         enchantCfgSection = BCPConfig and BCPConfig.CharacterPanel
     else
@@ -223,26 +219,18 @@ local function GetEnchantTexts(unit, slotId, libSlot)
 end
 
 function BCP_CreateBCSCompatStatFrame(skin, parent, name, yOffset, cardWidth)
-    local cfg                                  = skin.Config
-    local fontScale                            = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or
-    1.0
-
-    local leftPad                              = cfg.StatLabelLeftPad or 0
-    local rightPad                             = cfg.StatValueRightPad or 0
-
-    -- Scale right-side column widths with font so text never overlaps
-    local scaledLabelRightPad                  = math.floor((cfg.StatLabelRightPad or 40) * fontScale)
-    local scaledValueWidth                     = math.floor((cfg.StatValueWidth or 36) * fontScale)
-
-    local labelWidth                           = cardWidth - scaledLabelRightPad - (BCP_CARD_PADDING * 2) - leftPad
-    local valueWidth                           = scaledValueWidth
-
-    -- Row height scales with font so tall glyphs don't clip
-    local scaledStatH                          = math.ceil(BCP_STAT_FRAME_H * fontScale)
-
+    local cfg = skin.Config
+    local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local leftPad = cfg.StatLabelLeftPad or 0
+    local rightPad = cfg.StatValueRightPad or 0
+    local scaledLabelRightPad = math.floor((cfg.StatLabelRightPad or 40) * fontScale)
+    local scaledValueWidth = math.floor((cfg.StatValueWidth or 36) * fontScale)
+    local labelWidth = cardWidth - scaledLabelRightPad - (BCP_CARD_PADDING * 2) - leftPad
+    local valueWidth = scaledValueWidth
+    local scaledStatH = math.ceil(BCP_STAT_FRAME_H * fontScale)
     local labelFontTemplate, valueFontTemplate = skin:GetStatFrameFonts()
 
-    local frame                                = CreateFrame("Frame", name, parent)
+    local frame = CreateFrame("Frame", name, parent)
     frame:SetWidth(cardWidth - (BCP_CARD_PADDING * 2))
     frame:SetHeight(scaledStatH)
     frame:SetPoint("TOPLEFT", parent, "TOPLEFT", BCP_CARD_PADDING, -yOffset)
@@ -255,8 +243,6 @@ function BCP_CreateBCSCompatStatFrame(skin, parent, name, yOffset, cardWidth)
     label:SetJustifyH("LEFT")
     label:SetTextColor(1, 1, 1)
 
-    -- Always set an explicit scaled font size; fall back to 10 if the skin
-    -- doesn't specify one (e.g. pfUI which relies on the font template default).
     local baseLabelSize = cfg.StatLabelFontSize or 10
     local lFontPath, _, lFontFlags = label:GetFont()
     label:SetFont(lFontPath, baseLabelSize * fontScale, lFontFlags)
@@ -338,14 +324,9 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
     local titleTopPad = cfg.StatCardTitleTopPad or BCP_CARD_PADDING
     local bottomPad = cfg.StatCardBottomPad or BCP_CARD_PADDING
     local rowSpacing = cfg.StatRowSpacing or 0
-
-    -- fontScale drives all size/width growth; card width fills the content area
     local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
     local cardWidth = contentW - (BCP_CARD_MARGIN * 2)
-
-    -- Stat row height scales so taller glyphs never clip
     local scaledStatH = math.ceil(BCP_STAT_FRAME_H * fontScale)
-
     local yOffset = 0
 
     if BCP_IS_USING_BCS then

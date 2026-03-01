@@ -12,13 +12,13 @@ BCP_CONFIG_FREE_MINIMAP_TT =
 
 -- Section: Permanent Enchants
 BCP_CONFIG_SEC_PERM_ENCH = "Permanent Enchants"
-BCP_CONFIG_PE_CHAR_PANEL = "Show On Character Panel"
-BCP_CONFIG_PE_INSPECT = "Show On Inspect Panel"
+BCP_CONFIG_PE_CHAR_PANEL = "Show Permanent Enchants Text"
+BCP_CONFIG_PE_INSPECT = "Show Permanent Enchants Text"
 
 -- Section: Temporary Enchants
 BCP_CONFIG_SEC_TEMP_ENCH = "Temporary Enchants"
-BCP_CONFIG_TE_CHAR_PANEL = "Show On Character Panel"
-BCP_CONFIG_TE_INSPECT = "Show On Inspect Panel"
+BCP_CONFIG_TE_CHAR_PANEL = "Show Temporary Enchants Text"
+BCP_CONFIG_TE_INSPECT = "Show Temporary Enchants Text"
 
 -- Section: Missing Enchants
 BCP_CONFIG_SEC_MISS_ENCH = "Missing Enchants"
@@ -38,12 +38,12 @@ BCP_CONFIG_FONT_SCALE_TT =
 BCP_CONFIG_FONT_SCALE_RELOAD = "* Reload UI to apply changes"
 
 -- Section: Character Panel Enchants
-BCP_CONFIG_SEC_CHAR_ENCHANTS = "Character Panel - Enchant Text"
+BCP_CONFIG_SEC_CHAR_ENCHANTS = "Character Panel"
 BCP_CONFIG_CHAR_ENCHANT_FONT_SCALE_TT =
 "Scales the size of the enchant text shown next to equipment slots on the character panel.\nRequires a UI reload to take effect."
 
 -- Section: Inspect Panel Enchants
-BCP_CONFIG_SEC_INSPECT_ENCHANTS = "Inspect Panel - Enchant Text"
+BCP_CONFIG_SEC_INSPECT_ENCHANTS = "Inspect Panel"
 BCP_CONFIG_INSPECT_ENCHANT_FONT_SCALE_TT =
 "Scales the size of the enchant text shown next to equipment slots on the inspect panel.\nRequires a UI reload to take effect."
 
