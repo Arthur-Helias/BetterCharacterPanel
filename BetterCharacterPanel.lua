@@ -1,6 +1,6 @@
 BCP_VERSION_MAJOR = "1"
 BCP_VERSION_MINOR = "2"
-BCP_VERSION_PATCH = "2"
+BCP_VERSION_PATCH = "3"
 
 BCP_IS_USING_PFUI = false
 BCP_IS_USING_PFUI_TURTLE = false -- Not used yet, could be useful for potential incompatibilities in the future.

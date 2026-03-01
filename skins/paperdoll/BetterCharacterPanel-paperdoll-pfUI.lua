@@ -76,7 +76,7 @@ skin.Config = {
     ResistanceItemSpacing = 2,
 
     -- BCS stats frame
-    StatValueWidth = 36,
+    StatValueWidth = 80,
     StatLabelRightPad = 40,
     StatLabelLeftPad = 0,
     StatValueRightPad = 0,
