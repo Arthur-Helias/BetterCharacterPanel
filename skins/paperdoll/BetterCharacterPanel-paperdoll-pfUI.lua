@@ -248,7 +248,9 @@ function skin:OnPaperDollShow()
             end)
         end
 
-        BCPPFUICharacterInformationFrame:SetWidth(scaledInfoWidth)
+        if not (isWideMode and BCPPFUIStatsContent and BCPPFUIStatsContent.bcpContentBuilt) then
+            BCPPFUICharacterInformationFrame:SetWidth(scaledInfoWidth)
+        end
     end
 
     if BCPPFUICharacterInformationFrame then

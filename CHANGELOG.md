@@ -2,6 +2,12 @@
 
 All changes to this project will be documented in this file.
 
+## [1.3.1] - 2026-03-06
+
+### Fixed
+
+- Fixed wide mode's custom width being cancelled out with each subsequent re-opening of the character frame
+
 ## [1.3.0] - 2026-03-06
 
 ### Added

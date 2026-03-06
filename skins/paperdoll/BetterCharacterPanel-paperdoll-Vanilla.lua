@@ -201,7 +201,9 @@ function skin:OnPaperDollShow()
             infoFrame:SetBackdropBorderColor(1, 1, 1, 1)
         end
 
-        BCPVanillaCharacterInformationFrame:SetWidth(scaledInfoWidth)
+        if not (isWideMode and BCPVanillaStatsContent and BCPVanillaStatsContent.bcpContentBuilt) then
+            BCPVanillaCharacterInformationFrame:SetWidth(scaledInfoWidth)
+        end
     end
 
     if not BCPVanillaStatsScrollFrame and BCPVanillaCharacterInformationFrame and CharacterResistanceFrame then
