@@ -32,10 +32,15 @@ BCP_CONFIG_ME_MIN_QUALITY_TT =
 
 -- Section: Stat Panel
 BCP_CONFIG_SEC_STAT_PANEL = "Stat Panel"
+BCP_CONFIG_SP_WIDEMODE = "Wide Mode"
+BCP_CONFIG_SP_WIDEMODE_TT =
+"Increases the width of the stat panel, preventing the need for a scroll bar.\nRequires a UI reload to take effect."
 BCP_CONFIG_FONT_SCALE = "Font Scale"
 BCP_CONFIG_FONT_SCALE_TT =
 "Scales the size of all text and column widths in the stat panel.\nRequires a UI reload to take effect."
 BCP_CONFIG_FONT_SCALE_RELOAD = "* Reload UI to apply changes"
+BCP_CONFIG_CATEGORY_ORDER = "BCS Category Order"
+BCP_CONFIG_CATEGORY_ORDER_TT = "Changes the display order of the Better Character Stats categories.\nRequires a UI reload to take effect."
 
 -- Section: Character Panel Enchants
 BCP_CONFIG_SEC_CHAR_ENCHANTS = "Character Panel"

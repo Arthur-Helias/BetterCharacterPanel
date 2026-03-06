@@ -218,6 +218,49 @@ local function GetEnchantTexts(unit, slotId, libSlot)
     return permText, tempText, isMissing
 end
 
+function BCP_GetBCSCategoryOrder()
+    if not BCP_IS_USING_BCS or not BCS or type(BCS.PLAYERSTAT_DROPDOWN_OPTIONS) ~= "table" then
+        return {}
+    end
+
+    if type(BCPConfig.StatPanel.CategoryOrder) ~= "table" then
+        BCPConfig.StatPanel.CategoryOrder = {}
+    end
+
+    local order = BCPConfig.StatPanel.CategoryOrder
+    local bcsCats = BCS.PLAYERSTAT_DROPDOWN_OPTIONS
+
+    for i = table.getn(order), 1, -1 do
+        local found = false
+
+        for _, cat in ipairs(bcsCats) do
+            if order[i] == cat then
+                found = true; break
+            end
+        end
+
+        if not found then
+            table.remove(order, i)
+        end
+    end
+
+    for _, cat in ipairs(bcsCats) do
+        local found = false
+
+        for _, oCat in ipairs(order) do
+            if oCat == cat then
+                found = true; break
+            end
+        end
+
+        if not found then
+            table.insert(order, cat)
+        end
+    end
+
+    return order
+end
+
 function BCP_CreateBCSCompatStatFrame(skin, parent, name, yOffset, cardWidth)
     local cfg = skin.Config
     local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
@@ -317,29 +360,62 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
         return
     end
 
-    local contentW = (scrollFrame and scrollFrame:GetWidth()) or 136
+    local infoFrame = scrollFrame and scrollFrame:GetParent()
+    local cfg = skin.Config
+    local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local isWideMode = BCP_IS_USING_BCS and BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.WideMode
+    local baseInfoWidth = math.floor(cfg.InfoFrameWidth * fontScale)
+    local resistanceFrameWidth = ((cfg.ResistanceItemWidth + cfg.ResistanceItemSpacing) * 5) - cfg.ResistanceItemSpacing
+    local paddingAddition = (BCP_IS_USING_PFUI and 15) or 35
+
+    if baseInfoWidth <= resistanceFrameWidth then
+        baseInfoWidth = resistanceFrameWidth + paddingAddition
+    end
+
+    if infoFrame then
+        infoFrame:SetWidth(baseInfoWidth)
+    end
+
+    local scrollPaddingX = (BCP_IS_USING_PFUI and 2) or 17
+    local contentW = baseInfoWidth - scrollPaddingX
+    local maxH = (scrollFrame and scrollFrame:GetHeight()) or 400
+
+    if isWideMode then
+        maxH = maxH + 75
+    elseif BCP_IS_USING_BCS then
+        local scrollbarWidth = (BCP_IS_USING_PFUI and 20) or 25
+
+        contentW = contentW - scrollbarWidth
+    end
+
     contentFrame:SetWidth(contentW)
 
-    local cfg = skin.Config
     local titleTopPad = cfg.StatCardTitleTopPad or BCP_CARD_PADDING
     local bottomPad = cfg.StatCardBottomPad or BCP_CARD_PADDING
     local rowSpacing = cfg.StatRowSpacing or 0
-    local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local columnSpacing = 4
     local cardWidth = contentW - (BCP_CARD_MARGIN * 2)
     local scaledStatH = math.ceil(BCP_STAT_FRAME_H * fontScale)
     local yOffset = 0
 
     if BCP_IS_USING_BCS then
-        local catTotal = table.getn(BCS.PLAYERSTAT_DROPDOWN_OPTIONS)
+        local categoryOrder = BCP_GetBCSCategoryOrder()
+        local currentX = BCP_CARD_MARGIN
+        local currentY = 0
 
-        for i, categoryKey in ipairs(BCS.PLAYERSTAT_DROPDOWN_OPTIONS) do
+        for i, categoryKey in ipairs(categoryOrder) do
             local rowStep = scaledStatH + rowSpacing
             local cardH = titleTopPad + BCP_TITLE_H + (6 * rowStep) - rowSpacing + bottomPad
+
+            if isWideMode and currentY + cardH > maxH and currentY > 0 then
+                currentX = currentX + cardWidth + columnSpacing
+                currentY = 0
+            end
 
             local card = CreateFrame("Frame", bcsCardPrefix .. i, contentFrame)
             card:SetWidth(cardWidth)
             card:SetHeight(cardH)
-            card:SetPoint("TOPLEFT", contentFrame, "TOPLEFT", BCP_CARD_MARGIN, -yOffset)
+            card:SetPoint("TOPLEFT", contentFrame, "TOPLEFT", currentX, -currentY)
 
             skin:ApplyCardBackdrop(card)
 
@@ -365,14 +441,33 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
                 BCP_CreateBCSCompatStatFrame(skin, card, rowPrefix .. j, rowYStart + ((j - 1) * rowStep), cardWidth)
             end
 
-            yOffset = yOffset + cardH
-
-            if i < catTotal then
-                yOffset = yOffset + 3
+            currentY = currentY + cardH + 3
+            if not isWideMode then
+                yOffset = currentY
             end
         end
 
-        contentFrame:SetHeight(yOffset - 45)
+        if isWideMode then
+            local totalContentWidth = currentX + cardWidth + BCP_CARD_MARGIN
+            contentFrame:SetWidth(totalContentWidth)
+
+            if infoFrame then
+                infoFrame:SetWidth(totalContentWidth + scrollPaddingX)
+
+                if BCP_IS_USING_PFUI and BCPPFUIUnifiedBackdrop and BCPPFUIUnifiedBackdrop.backdrop then
+                    BCPPFUIUnifiedBackdrop.backdrop:SetPoint("BOTTOMRIGHT", -30 + infoFrame:GetWidth() + 5, 72)
+                end
+            end
+
+            contentFrame:SetHeight(maxH)
+        else
+            contentFrame:SetWidth(contentW)
+            contentFrame:SetHeight(yOffset - 45)
+
+            if BCP_IS_USING_PFUI and BCPPFUIUnifiedBackdrop and BCPPFUIUnifiedBackdrop.backdrop and infoFrame then
+                BCPPFUIUnifiedBackdrop.backdrop:SetPoint("BOTTOMRIGHT", -30 + infoFrame:GetWidth() + 5, 72)
+            end
+        end
 
         if not contentFrame.bcpHooked then
             contentFrame.bcpHooked = true
@@ -388,7 +483,7 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
         local FRAME_H = math.ceil((cfg.NativeStatRowHeight or BCP_STAT_FRAME_H) * fontScale)
         local cardWidthExtra = cfg.NativeCardWidthExtra or 17
         local cardXOffset = cfg.NativeStatCardXOffset or 0
-        local statFrameWidthExtra = cfg.NativeStatFrameWidthExtra or 10
+        local statFrameWidthExtra = cfg.NativeStatFrameWidthExtra or 0
         local statFrameXOffset = cfg.NativeStatFrameXOffset or 0
         local nativeCards = {
             {
@@ -417,6 +512,9 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
 
         local catTotal = table.getn(nativeCards)
         local innerWidth = cardWidth - (BCP_CARD_PADDING * 2)
+        local frameRightPadding = 22
+        local calculatedFrameW = (cardWidth + cardWidthExtra) - (BCP_CARD_PADDING + statFrameXOffset) - frameRightPadding +
+            statFrameWidthExtra
 
         for i, cardDef in ipairs(nativeCards) do
             local rowCount = table.getn(cardDef.frames)
@@ -449,7 +547,7 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
                 statFrame:SetParent(card)
                 statFrame:ClearAllPoints()
                 statFrame:SetPoint("TOPLEFT", card, "TOPLEFT", BCP_CARD_PADDING + statFrameXOffset, rowY)
-                statFrame:SetWidth(cardWidth + statFrameWidthExtra)
+                statFrame:SetWidth(calculatedFrameW)
                 statFrame:Show()
                 rowY = rowY - rowStep
             end
@@ -465,9 +563,16 @@ function BCP_BuildScrollContent(skin, contentFrame, scrollFrame, scrollBar, bcsC
     end
 
     if scrollFrame and scrollBar then
-        local contentH = contentFrame:GetHeight()
-        local frameH = scrollFrame:GetHeight()
-        scrollBar:SetMinMaxValues(0, math.max(0, contentH - frameH))
+        if isWideMode then
+            scrollBar:SetMinMaxValues(0, 0)
+            scrollBar:Hide()
+        else
+            local contentH = contentFrame:GetHeight()
+            local frameH = scrollFrame:GetHeight()
+
+            scrollBar:SetMinMaxValues(0, math.max(0, contentH - frameH - 20))
+            scrollBar:Show()
+        end
     end
 
     BCP_RefreshBCSSections(false)

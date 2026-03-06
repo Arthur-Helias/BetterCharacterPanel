@@ -174,35 +174,38 @@ function skin:OnPaperDollShow()
         CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, "TOPLEFT", cfg.ModelOffsetX, cfg.ModelOffsetY)
     end
 
-    if PaperDollFrame and not BCPVanillaCharacterInformationFrame then
-        local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local isWideMode = BCP_IS_USING_BCS and BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.WideMode
+
+    if PaperDollFrame then
         local scaledInfoWidth = math.floor(cfg.InfoFrameWidth * fontScale)
         local resistanceFrameWidth = ((cfg.ResistanceItemWidth + cfg.ResistanceItemSpacing) * 5) -
-        cfg.ResistanceItemSpacing
+            cfg.ResistanceItemSpacing
 
         if scaledInfoWidth <= resistanceFrameWidth then
             scaledInfoWidth = resistanceFrameWidth + 35
         end
 
-        local infoFrame = CreateFrame("Frame", "BCPVanillaCharacterInformationFrame", PaperDollFrame)
-        infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)
-        infoFrame:SetHeight(PaperDollFrame:GetHeight() - cfg.InfoFrameHeightPadding)
-        infoFrame:SetWidth(scaledInfoWidth)
-        infoFrame:SetBackdrop({
-            bgFile = cfg.BackdropBgFile,
-            tile = true,
-            tileSize = cfg.BackdropTileSize,
-            edgeFile = cfg.BackdropEdgeFile,
-            edgeSize = cfg.BackdropEdgeSize,
-            insets = cfg.BackdropInsets,
-        })
-        infoFrame:SetBackdropBorderColor(1, 1, 1, 1)
+        if not BCPVanillaCharacterInformationFrame then
+            local infoFrame = CreateFrame("Frame", "BCPVanillaCharacterInformationFrame", PaperDollFrame)
+            infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)
+            infoFrame:SetHeight(PaperDollFrame:GetHeight() - cfg.InfoFrameHeightPadding)
+            infoFrame:SetBackdrop({
+                bgFile = cfg.BackdropBgFile,
+                tile = true,
+                tileSize = cfg.BackdropTileSize,
+                edgeFile = cfg.BackdropEdgeFile,
+                edgeSize = cfg.BackdropEdgeSize,
+                insets = cfg.BackdropInsets,
+            })
+            infoFrame:SetBackdropBorderColor(1, 1, 1, 1)
+        end
+
+        BCPVanillaCharacterInformationFrame:SetWidth(scaledInfoWidth)
     end
 
     if not BCPVanillaStatsScrollFrame and BCPVanillaCharacterInformationFrame and CharacterResistanceFrame then
         local scrollFrame = CreateFrame("ScrollFrame", "BCPVanillaStatsScrollFrame", BCPVanillaCharacterInformationFrame)
-        scrollFrame:SetPoint("TOPLEFT", BCPVanillaCharacterInformationFrame, "TOPLEFT", 12, -cfg.ScrollTopPad)
-        scrollFrame:SetPoint("BOTTOMRIGHT", BCPVanillaCharacterInformationFrame, "BOTTOMRIGHT", -5, cfg.ScrollBottomPad)
         scrollFrame:EnableMouseWheel(true)
 
         local contentFrame = CreateFrame("Frame", "BCPVanillaStatsContent", scrollFrame)
@@ -239,6 +242,16 @@ function skin:OnPaperDollShow()
                 self:BuildScrollContent()
             end
         end)
+    end
+
+    if BCPVanillaStatsScrollFrame and BCPVanillaCharacterInformationFrame then
+        local bottomPad = isWideMode and 0 or cfg.ScrollBottomPad
+
+        BCPVanillaStatsScrollFrame:ClearAllPoints()
+        BCPVanillaStatsScrollFrame:SetPoint("TOPLEFT", BCPVanillaCharacterInformationFrame, "TOPLEFT", 12,
+            -cfg.ScrollTopPad)
+        BCPVanillaStatsScrollFrame:SetPoint("BOTTOMRIGHT", BCPVanillaCharacterInformationFrame, "BOTTOMRIGHT", -5,
+            bottomPad)
     end
 
     if BCPVanillaStatsScrollFrame and CharacterResistanceFrame and not BCPVanillaResistanceAnchored then

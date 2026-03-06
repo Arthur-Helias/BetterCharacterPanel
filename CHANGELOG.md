@@ -2,6 +2,14 @@
 
 All changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-03-06
+
+### Added
+
+- Added Wide Mode setting, allowing the user to remove the scroll bar from the info frame and instead scale the width of the frame with the stat cards
+- Added BCS stat cards sorting setting, allowing the user to choose the cards display order
+- Added scrolling to the config GUI
+
 ## [1.2.3] - 2026-03-01
 
 ### Changed

@@ -45,7 +45,8 @@ It is also **strongly recommended** to install [Better Character Stats](https://
 
 ## Known Issues
 
-None so far.  
+- pfUI's skinning is not applied to the dropdown and the checkmarks in the config GUI. There is issues with the frame level that I can't seem to resolve.
+
 Please report any issues you encounter through the `Issues` tab on this repository. Feel free to open a PR if you'd like to contribute!
 
 ## Compatibility

@@ -222,56 +222,63 @@ function skin:OnPaperDollShow()
         CharacterModelFrame:SetPoint("TOPLEFT", PaperDollFrame, "TOPLEFT", cfg.ModelOffsetX, cfg.ModelOffsetY)
     end
 
-    if PaperDollFrame and not BCPPFUICharacterInformationFrame then
-        local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local fontScale = (BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.FontScale) or 1.0
+    local isWideMode = BCP_IS_USING_BCS and BCPConfig and BCPConfig.StatPanel and BCPConfig.StatPanel.WideMode
+
+    if PaperDollFrame then
         local scaledInfoWidth = math.floor(cfg.InfoFrameWidth * fontScale)
-        local resistanceFrameWidth = ((cfg.ResistanceItemWidth + cfg.ResistanceItemSpacing) * 5) - cfg.ResistanceItemSpacing
+        local resistanceFrameWidth = ((cfg.ResistanceItemWidth + cfg.ResistanceItemSpacing) * 5) -
+            cfg.ResistanceItemSpacing
 
         if scaledInfoWidth <= resistanceFrameWidth then
             scaledInfoWidth = resistanceFrameWidth + 15
         end
 
-        local infoFrame = CreateFrame("Frame", "BCPPFUICharacterInformationFrame", PaperDollFrame)
-        infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)
-        infoFrame:SetHeight(PaperDollFrame:GetHeight() + 19 - cfg.InfoFrameHeightPadding)
-        infoFrame:SetWidth(scaledInfoWidth)
-        infoFrame:EnableMouse(true)
-        infoFrame:RegisterForDrag("LeftButton")
-        infoFrame:SetScript("OnDragStart", function()
-            CharacterFrame:StartMoving()
-        end)
-        infoFrame:SetScript("OnDragStop", function()
-            CharacterFrame:StopMovingOrSizing()
-        end)
+        if not BCPPFUICharacterInformationFrame then
+            local infoFrame = CreateFrame("Frame", "BCPPFUICharacterInformationFrame", PaperDollFrame)
+            infoFrame:SetPoint("LEFT", cfg.InfoFrameXOffset, cfg.InfoFrameYOffset)
+            infoFrame:SetHeight(PaperDollFrame:GetHeight() + 19 - cfg.InfoFrameHeightPadding)
+            infoFrame:EnableMouse(true)
+            infoFrame:RegisterForDrag("LeftButton")
+            infoFrame:SetScript("OnDragStart", function()
+                CharacterFrame:StartMoving()
+            end)
+            infoFrame:SetScript("OnDragStop", function()
+                CharacterFrame:StopMovingOrSizing()
+            end)
+        end
+
+        BCPPFUICharacterInformationFrame:SetWidth(scaledInfoWidth)
     end
 
-    if BCPPFUICharacterInformationFrame and not BCPPFUIUnifiedBackdrop then
-        local unified = CreateFrame("Frame", "BCPPFUIUnifiedBackdrop", CharacterFrame)
-        unified:SetAllPoints(CharacterFrame)
-        unified:EnableMouse(true)
-        unified:RegisterForDrag("LeftButton")
-        unified:SetScript("OnDragStart", function()
-            CharacterFrame:StartMoving()
-        end)
-        unified:SetScript("OnDragStop", function()
-            CharacterFrame:StopMovingOrSizing()
-        end)
+    if BCPPFUICharacterInformationFrame then
+        if not BCPPFUIUnifiedBackdrop then
+            local unified = CreateFrame("Frame", "BCPPFUIUnifiedBackdrop", CharacterFrame)
+            unified:SetAllPoints(CharacterFrame)
+            unified:EnableMouse(true)
+            unified:RegisterForDrag("LeftButton")
+            unified:SetScript("OnDragStart", function()
+                CharacterFrame:StartMoving()
+            end)
+            unified:SetScript("OnDragStop", function()
+                CharacterFrame:StopMovingOrSizing()
+            end)
 
-        pfUI.api.CreateBackdrop(unified, nil, nil, cfg.UnifiedBackdropAlpha)
-        pfUI.api.CreateBackdropShadow(unified)
+            pfUI.api.CreateBackdrop(unified, nil, nil, cfg.UnifiedBackdropAlpha)
+            pfUI.api.CreateBackdropShadow(unified)
 
-        -- pfUI's character frame skin magic numbers
-        unified.backdrop:SetPoint("TOPLEFT", 10, -10)
-        unified.backdrop:SetPoint("BOTTOMRIGHT", -30 + BCPPFUICharacterInformationFrame:GetWidth() + 5, 72)
-        unified:Show()
+            -- pfUI's character frame skin magic numbers
+            unified.backdrop:SetPoint("TOPLEFT", 10, -10)
+            unified:Show()
+        end
+
+        BCPPFUIUnifiedBackdrop.backdrop:SetPoint("BOTTOMRIGHT", -30 + BCPPFUICharacterInformationFrame:GetWidth() + 5, 72)
     end
 
     ChangeFrameValues()
 
     if not BCPPFUIStatsScrollFrame and BCPPFUICharacterInformationFrame and CharacterResistanceFrame then
         local scrollFrame = CreateFrame("ScrollFrame", "BCPPFUIStatsScrollFrame", BCPPFUICharacterInformationFrame)
-        scrollFrame:SetPoint("TOPLEFT", BCPPFUICharacterInformationFrame, "TOPLEFT", 2, -cfg.ScrollTopPad)
-        scrollFrame:SetPoint("BOTTOMRIGHT", BCPPFUICharacterInformationFrame, "BOTTOMRIGHT", 0, cfg.ScrollBottomPad)
         scrollFrame:EnableMouseWheel(true)
 
         local contentFrame = CreateFrame("Frame", "BCPPFUIStatsContent", scrollFrame)
@@ -313,6 +320,14 @@ function skin:OnPaperDollShow()
                 self:BuildScrollContent()
             end
         end)
+    end
+
+    if BCPPFUIStatsScrollFrame and BCPPFUICharacterInformationFrame then
+        local bottomPad = isWideMode and 0 or cfg.ScrollBottomPad
+
+        BCPPFUIStatsScrollFrame:ClearAllPoints()
+        BCPPFUIStatsScrollFrame:SetPoint("TOPLEFT", BCPPFUICharacterInformationFrame, "TOPLEFT", 2, -cfg.ScrollTopPad)
+        BCPPFUIStatsScrollFrame:SetPoint("BOTTOMRIGHT", BCPPFUICharacterInformationFrame, "BOTTOMRIGHT", 0, bottomPad)
     end
 
     if BCPPFUIStatsScrollFrame and CharacterResistanceFrame and not BCPPFUIResistanceAnchored then
