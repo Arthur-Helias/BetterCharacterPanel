@@ -331,6 +331,14 @@ function BCP_RefreshBCSSections(skipBCSUpdate)
         BCS:UpdateStats()
     end
 
+    if BCS then
+        BCS.needScanSkills = true
+        BCS:GetMHWeaponSkill()
+        BCS:GetOHWeaponSkill()
+        BCS:GetRangedWeaponSkill()
+        BCS.needScanSkills = false
+    end
+
     for _, sectionInfo in ipairs(BCP_BCSSectionPrefixes) do
         for j = 1, 6 do
             local lbl = getglobal(sectionInfo.prefix .. j .. "Label")

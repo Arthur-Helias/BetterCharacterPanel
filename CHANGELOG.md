@@ -2,6 +2,12 @@
 
 All changes to this project will be documented in this file.
 
+## [1.3.2] - 2026-03-07
+
+### Fixed
+
+- Fixed weapon skills (ranged and melee) not always rendering
+
 ## [1.3.1] - 2026-03-06
 
 ### Fixed
