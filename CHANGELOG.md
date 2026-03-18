@@ -2,6 +2,14 @@
 
 All changes to this project will be documented in this file.
 
+## [1.3.3] - 2026-03-19
+
+### Changed
+
+- Changed the availability of the phases on Ambershire for Emerald Sanctum, BWL and Onyxia's Lair
+- Changed the availability of the phases on Tel Abim for Timbermaw Hold
+- Changed the availability of the phases on Nordaanar for Timbermaw Hold
+
 ## [1.3.2] - 2026-03-07
 
 ### Fixed

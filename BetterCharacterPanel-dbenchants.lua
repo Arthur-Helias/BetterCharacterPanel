@@ -122,7 +122,7 @@ BCPDBEnchants.PhaseTWOWNordanaar = {
     [BP.AQ] = true,
     [BP.Naxx] = true,
     [BP.Kara] = true,
-    [BP.TH] = false,
+    [BP.TH] = true,
 }
 
 BCPDBEnchants.PhaseTWOWTelAbim = {
@@ -135,16 +135,16 @@ BCPDBEnchants.PhaseTWOWTelAbim = {
     [BP.AQ] = true,
     [BP.Naxx] = true,
     [BP.Kara] = true,
-    [BP.TH] = false,
+    [BP.TH] = true,
 }
 
 BCPDBEnchants.PhaseTWOWAmbershire = {
     [BP.MC] = true,
     [BP.DM] = true,
-    [BP.OL] = false,
-    [BP.BWL] = false,
+    [BP.OL] = true,
+    [BP.BWL] = true,
     [BP.ZG] = true,
-    [BP.ES] = false,
+    [BP.ES] = true,
     [BP.AQ] = false,
     [BP.Naxx] = false,
     [BP.Kara] = false,
