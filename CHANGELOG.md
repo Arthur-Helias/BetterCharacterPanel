@@ -2,6 +2,12 @@
 
 All changes to this project will be documented in this file.
 
+## [1.3.4] - 2026-03-29
+
+### Fixed
+
+- Fixed BCS background not being hidden when using pfUI-addonskinner
+
 ## [1.3.3] - 2026-03-19
 
 ### Changed
