@@ -40,7 +40,8 @@ BCP_CONFIG_FONT_SCALE_TT =
 "Scales the size of all text and column widths in the stat panel.\nRequires a UI reload to take effect."
 BCP_CONFIG_FONT_SCALE_RELOAD = "* Reload UI to apply changes"
 BCP_CONFIG_CATEGORY_ORDER = "BCS Category Order"
-BCP_CONFIG_CATEGORY_ORDER_TT = "Changes the display order of the Better Character Stats categories.\nRequires a UI reload to take effect."
+BCP_CONFIG_CATEGORY_ORDER_TT =
+"Changes the display order of the Better Character Stats categories.\nRequires a UI reload to take effect."
 
 -- Section: Character Panel Enchants
 BCP_CONFIG_SEC_CHAR_ENCHANTS = "Character Panel"
@@ -519,7 +520,7 @@ BCP_PE_EFF_3054 = "-3% Inc. Ranged & Melee Crit."
 BCP_PE_EFF_3057 = "+8 Heal."
 
 -- Temporary Enchant Names
-BCP_TE_NAME_1 = "Rockbiter Weapon I"
+BCP_TE_NAME_1 = "Rockbiter Weapon III"
 BCP_TE_NAME_2 = "Frostbrand Weapon I"
 BCP_TE_NAME_3 = "Flametongue Weapon III"
 BCP_TE_NAME_4 = "Flametongue Weapon II"
@@ -538,6 +539,7 @@ BCP_TE_NAME_23 = "Mind-numbing Poison II"
 BCP_TE_NAME_25 = "Shadow Oil"
 BCP_TE_NAME_26 = "Frost Oil"
 BCP_TE_NAME_28 = "Minor Resistance"
+BCP_TE_NAME_29 = "Rockbiter Weapon I"
 BCP_TE_NAME_31 = "Beastslayer"
 BCP_TE_NAME_35 = "Mind-numbing Poison I"
 BCP_TE_NAME_40 = "Sharpen Blade I"
@@ -602,7 +604,7 @@ BCP_TE_NAME_3058 = "Dissolvent Poison I"
 BCP_TE_NAME_3059 = "Dissolvent Poison II"
 
 -- Temporary Enchant Effects
-BCP_TE_EFF_1 = "Rockbiter I"
+BCP_TE_EFF_1 = "Rockbiter III"
 BCP_TE_EFF_2 = "Frostbrand I"
 BCP_TE_EFF_3 = "Flametongue III"
 BCP_TE_EFF_4 = "Flametongue II"
@@ -621,6 +623,7 @@ BCP_TE_EFF_23 = "Mind-numbing P. II"
 BCP_TE_EFF_25 = "Shadow Oil"
 BCP_TE_EFF_26 = "Frost Oil"
 BCP_TE_EFF_28 = "+4 Res."
+BCP_TE_EFF_29 = "Rockbiter I"
 BCP_TE_EFF_31 = "+4 Dmg. vs Beasts"
 BCP_TE_EFF_35 = "Mind-numbing P. I"
 BCP_TE_EFF_40 = "+2 Dmg."

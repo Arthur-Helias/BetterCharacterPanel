@@ -4,11 +4,13 @@
 if GetLocale() == "frFR" then
     BCP_CONFIG_TITLE = "Better Character Panel"
     BCP_CONFIG_CLOSE = "Fermer"
-    BCP_MINIMAP_TOOLTIP = "Better Character Panel\n\nClic gauche: Basculer les paramètres\nCtrl+Clic: Déplacer le bouton de la minicarte"
+    BCP_MINIMAP_TOOLTIP =
+    "Better Character Panel\n\nClic gauche: Basculer les paramètres\nCtrl+Clic: Déplacer le bouton de la minicarte"
     BCP_CONFIG_SEC_MINIMAP = "Bouton de Minicarte"
     BCP_CONFIG_SHOW_MINIMAP = "Afficher le Bouton de Minicarte"
     BCP_CONFIG_FREE_MINIMAP = "Bouton de Minicarte Libre"
-    BCP_CONFIG_FREE_MINIMAP_TT = "Lorsqu'il est activé, le bouton de la minicarte peut être librement glissé n'importe où sur l'écran.\nLorsqu'il est désactivé, il orbite autour de la minicarte."
+    BCP_CONFIG_FREE_MINIMAP_TT =
+    "Lorsqu'il est activé, le bouton de la minicarte peut être librement glissé n'importe où sur l'écran.\nLorsqu'il est désactivé, il orbite autour de la minicarte."
     BCP_CONFIG_SEC_PERM_ENCH = "Enchantements Permanents"
     BCP_CONFIG_PE_CHAR_PANEL = "Afficher sur le Panneau de Personnage"
     BCP_CONFIG_PE_INSPECT = "Afficher sur le Panneau d'Inspection"
@@ -17,30 +19,38 @@ if GetLocale() == "frFR" then
     BCP_CONFIG_TE_INSPECT = "Afficher sur le Panneau d'Inspection"
     BCP_CONFIG_SEC_MISS_ENCH = "Enchantements Manquants"
     BCP_CONFIG_ME_SHOW = "Afficher les Enchantements Manquants"
-    BCP_CONFIG_ME_SHOW_TT = "Met en évidence les emplacements d'équipement qui manquent d'un enchantement permanent applicable."
+    BCP_CONFIG_ME_SHOW_TT =
+    "Met en évidence les emplacements d'équipement qui manquent d'un enchantement permanent applicable."
     BCP_CONFIG_ME_LVL60 = "Ne Pas Afficher Avant le Niveau 60"
-    BCP_CONFIG_ME_LVL60_TT = "Supprime l'indicateur d'enchantement manquant jusqu'à ce que votre personnage atteigne le niveau 60."
+    BCP_CONFIG_ME_LVL60_TT =
+    "Supprime l'indicateur d'enchantement manquant jusqu'à ce que votre personnage atteigne le niveau 60."
     BCP_CONFIG_ME_MIN_QUALITY = "Qualité Minimale:"
-    BCP_CONFIG_ME_MIN_QUALITY_TT = "Signaler un emplacement comme sans enchantement uniquement si l'objet équipé atteint ce seuil de qualité minimum."
+    BCP_CONFIG_ME_MIN_QUALITY_TT =
+    "Signaler un emplacement comme sans enchantement uniquement si l'objet équipé atteint ce seuil de qualité minimum."
     BCP_CONFIG_SEC_STAT_PANEL = "Panneau de Statistiques"
     BCP_CONFIG_SP_WIDEMODE = "Mode Large"
-    BCP_CONFIG_SP_WIDEMODE_TT = "Augmente la largeur du panneau de statistiques, évitant ainsi le besoin d'une barre de défilement."
+    BCP_CONFIG_SP_WIDEMODE_TT =
+    "Augmente la largeur du panneau de statistiques, évitant ainsi le besoin d'une barre de défilement."
     BCP_CONFIG_FONT_SCALE = "Taille de la Police"
-    BCP_CONFIG_FONT_SCALE_TT = "Ajuste la taille de tout le texte et la largeur des colonnes dans le panneau de statistiques.\nNécessite un rechargement de l'interface."
+    BCP_CONFIG_FONT_SCALE_TT =
+    "Ajuste la taille de tout le texte et la largeur des colonnes dans le panneau de statistiques.\nNécessite un rechargement de l'interface."
     BCP_CONFIG_FONT_SCALE_RELOAD = "* Recharger l'interface pour appliquer les changements"
     BCP_CONFIG_CATEGORY_ORDER = "Ordre des Catégories BCS"
     BCP_CONFIG_CATEGORY_ORDER_TT = "Modifie l'ordre d'affichage des catégories de Better Character Stats."
     BCP_CONFIG_SEC_CHAR_ENCHANTS = "Panneau Personnage"
-    BCP_CONFIG_CHAR_ENCHANT_FONT_SCALE_TT = "Ajuste la taille du texte des enchantements à côté des emplacements dans le panneau personnage.\nNécessite un rechargement de l'interface."
+    BCP_CONFIG_CHAR_ENCHANT_FONT_SCALE_TT =
+    "Ajuste la taille du texte des enchantements à côté des emplacements dans le panneau personnage.\nNécessite un rechargement de l'interface."
     BCP_CONFIG_SEC_INSPECT_ENCHANTS = "Panneau d'Inspection"
-    BCP_CONFIG_INSPECT_ENCHANT_FONT_SCALE_TT = "Ajuste la taille du texte des enchantements à côté des emplacements dans le panneau d'inspection.\nNécessite un rechargement de l'interface."
+    BCP_CONFIG_INSPECT_ENCHANT_FONT_SCALE_TT =
+    "Ajuste la taille du texte des enchantements à côté des emplacements dans le panneau d'inspection.\nNécessite un rechargement de l'interface."
     BCP_CONFIG_QUALITY_0 = "Médiocre"
     BCP_CONFIG_QUALITY_1 = "Commun"
     BCP_CONFIG_QUALITY_2 = "Peu commun"
     BCP_CONFIG_QUALITY_3 = "Rare"
     BCP_CONFIG_QUALITY_4 = "Épique"
     BCP_CONFIG_QUALITY_5 = "Légendaire"
-    BCP_ERR_NAM = "|cffff4444Nampower|r est requis pour que cette extension fonctionne.\nInstallez-le depuis le lien ci-dessous, puis redémarrez votre jeu."
+    BCP_ERR_NAM =
+    "|cffff4444Nampower|r est requis pour que cette extension fonctionne.\nInstallez-le depuis le lien ci-dessous, puis redémarrez votre jeu."
     BCP_ENCHANTED = "Enchanté"
     BCP_TEMP_ENCHANT = "Ench. Temp."
     BCP_PE_NAME_15 = "Léger Kit d'Armure"
@@ -508,6 +518,7 @@ if GetLocale() == "frFR" then
     BCP_TE_NAME_25 = "Shadow Oil"
     BCP_TE_NAME_26 = "Frost Oil"
     BCP_TE_NAME_28 = "Mineur Résistance"
+    BCP_TE_NAME_29 = "Rockbiter Arme I"
     BCP_TE_NAME_31 = "Beastslayer"
     BCP_TE_NAME_35 = "Mind-numbing Poison I"
     BCP_TE_NAME_40 = "Sharpen Blade I"
@@ -589,6 +600,7 @@ if GetLocale() == "frFR" then
     BCP_TE_EFF_25 = "Shadow Oil"
     BCP_TE_EFF_26 = "Frost Oil"
     BCP_TE_EFF_28 = "+4 Rés."
+    BCP_TE_EFF_29 = "Rockbiter I"
     BCP_TE_EFF_31 = "+4 Dég. vs Beasts"
     BCP_TE_EFF_35 = "Mind-numbing P. I"
     BCP_TE_EFF_40 = "+2 Dég."
