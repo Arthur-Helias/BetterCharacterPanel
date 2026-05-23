@@ -34,6 +34,10 @@ local function GetRealmPhase(realmName)
         return BCPDBEnchants.PhaseTWOWAmbershire
     end
 
+    if realmName == "Eversong Wilds" then
+        return BCPDBEnchants.PhaseTWOWEversongWilds
+    end
+
     return nil
 end
 

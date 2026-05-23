@@ -2,6 +2,12 @@
 
 All changes to this project will be documented in this file.
 
+## [1.3.6] - 2026-05-24
+
+### Added
+
+- Added Eversong Wilds content phases
+
 ## [1.3.5] - 2026-04-07
 
 ### Fixed

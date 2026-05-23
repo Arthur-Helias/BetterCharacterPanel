@@ -151,6 +151,19 @@ BCPDBEnchants.PhaseTWOWAmbershire = {
     [BP.TH] = false,
 }
 
+BCPDBEnchants.PhaseTWOWEversongWilds = {
+    [BP.MC] = false,
+    [BP.DM] = true,
+    [BP.OL] = false,
+    [BP.BWL] = false,
+    [BP.ZG] = false,
+    [BP.ES] = false,
+    [BP.AQ] = false,
+    [BP.Naxx] = false,
+    [BP.Kara] = false,
+    [BP.TH] = false,
+}
+
 
 -- ====================================
 -- =   Enchant IDs Localized Tables   =
